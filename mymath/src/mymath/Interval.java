@@ -2,10 +2,10 @@ package mymath;
 
 public class Interval {
 	private int ondergrens;
-	private int bovengrens;
+	private int lengte;
 	
 	public static int getLengte(Interval interval) {
-		return interval.bovengrens - interval.ondergrens;
+		return interval.lengte;
 	}
 	
 	public static void setOndergrens(Interval interval, int nieuweOndergrens) {
@@ -13,6 +13,6 @@ public class Interval {
 	}
 	
 	public static void setBovengrens(Interval interval, int nieuweBovengrens) {
-		interval.bovengrens = nieuweBovengrens;
+		interval.lengte = nieuweBovengrens - interval.ondergrens;
 	}
 }
