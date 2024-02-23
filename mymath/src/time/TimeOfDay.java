@@ -55,16 +55,22 @@ public class TimeOfDay {
 	/**
 	 * Initialiseert het nieuwe object met de gegeven uren en minuten.
 	 * 
-	 * @pre uren zijn tussen 0 en 24.
-	 *    | 0 <= initialHours && initialHours < 24
-	 * @pre minuten zijn tussen 0 en 60.
-	 *    | 0 <= initialMinutes && initialMinutes < 60
+	 * @throws IllegalArgumentException | !(0 <= initialHours && initialHours < 24)
+	 * @throws IllegalArgumentException | !(0 <= initialMinutes && initialMinutes < 60)
 	 * @post het uur van het nieuwe object is het gegeven uur.
 	 *    | getHours() == initialHours
 	 * @post de minuten van het nieuwe object zijn de gegeven minuten.
 	 *    | getMinutes() == initialMinutes
 	 */
 	public TimeOfDay(int initialHours, int initialMinutes) {
+		if (initialHours < 0)
+			throw new IllegalArgumentException("`initialHours` is less than zero.");
+		if (initialHours >= 24)
+			throw new IllegalArgumentException("`initialHours` is greater than 24.");
+		if (initialMinutes < 0)
+			throw new IllegalArgumentException("`initialMinutes` is less than zero.");
+		if (initialMinutes >= 24)
+			throw new IllegalArgumentException("`initialMinutes` is greater than 24.");
 		hours = initialHours;
 		minutes = initialMinutes;
 	}
