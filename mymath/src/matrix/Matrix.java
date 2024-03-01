@@ -3,9 +3,8 @@ package matrix;
 import java.util.stream.IntStream;
 
 /**
- * Elke instantie stelt een matrix van kommagetallen voor.
+ * Elke instantie slaat een matrix van kommagetallen op.
  * 
- * @immutable
  * @invar | getElementsByRow().length == getNumberRows() * getNumberCols()
  * @invar | getElementsByCol().length == getNumberRows() * getNumberCols()
  * @invar | getElements().length == getNumberRows()
