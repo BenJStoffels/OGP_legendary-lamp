@@ -1,5 +1,6 @@
 package matrix;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
@@ -11,6 +12,19 @@ import java.util.stream.IntStream;
  * @invar | IntStream.range(0, getNumberRows()).allMatch(i -> getElements()[i].length == getNumberCols())
  */
 public class Matrix {
+	/**
+	 * @invar | numRows >= 0
+	 * @invar | numCols >= 0
+	 * @invar | numbers.length == numRows
+	 * @invar | Arrays.stream(numbers).allMatch(arr -> arr.length == numCols)
+	 */
+	private int numRows;
+	private int numCols;
+	/**
+	 * @representationObject
+	 * @representationObjects
+	 */
+	private double[][] numbers;
 		
 	public int getNumberRows() { throw new RuntimeException("Not yet implemented"); }
 	
