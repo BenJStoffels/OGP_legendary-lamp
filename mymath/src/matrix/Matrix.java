@@ -47,25 +47,24 @@ public class Matrix {
 	public Matrix(int numRows, int numCols, double[] numbers) { throw new RuntimeException("Not yet implemented"); }
 	
 	/**
-	 * @creates | result
-	 * @inspects | this
+	 * @mutates | this
 	 * 
-	 * @post | getNumberRows() == result.getNumberRows()
-	 * @post | getNumberCols() == result.getNumberCols()
-	 * @post | IntStream.range(0, getNumberRows() * getNumberCols()).allMatch(i -> result.getElementsByRow()[i] == scalar * getElementsByRow()[i])
+	 * @post | getNumberRows() == old(getNumberRows())
+	 * @post | getNumberCols() == old(getNumberCols())
+	 * @post | IntStream.range(0, getNumberRows() * getNumberCols()).allMatch(i -> getElementsByRow()[i] == scalar * old(getElementsByRow())[i])
 	 */
-	public Matrix scaled(double scalar) { throw new RuntimeException("Not yet implemented"); }
+	public void scale(double scalar) { throw new RuntimeException("Not yet implemented"); }
 	
 	/**
 	 * @throws IllegalArgumentException | mat.getNumberRows() !=  getNumberRows()
 	 * @throws IllegalArgumentException | mat.getNumberCols() != getNumberCols()
 	 * 
-	 * @creates | result
-	 * @inspects | this, mat
+	 * @mutates | this
+	 * @inspects | mat
 	 * 
-	 * @post | getNumberRows() == result.getNumberRows()
-	 * @post | getNumberCols() == result.getNumberCols()
-	 * @post | IntStream.range(0, getNumberRows() * getNumberCols()).allMatch(i -> result.getElementsByRow()[i] == mat.getElementsByRow()[i] + getElementsByRow()[i])
+	 * @post | getNumberRows() == old(getNumberRows())
+	 * @post | getNumberCols() == old(getNumberCols())
+	 * @post | IntStream.range(0, getNumberRows() * getNumberCols()).allMatch(i -> getElementsByRow()[i] == old(mat.getElementsByRow())[i] + old(getElementsByRow())[i])
 	 */
-	public Matrix plus(Matrix mat) { throw new RuntimeException("Not yet implemented"); }
+	public void add(Matrix mat) { throw new RuntimeException("Not yet implemented"); }
 }
